@@ -1,0 +1,202 @@
+<link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+
+
+<style>
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body .navbar {
+    display: flex;
+    justify-content: space-between;
+      background: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+backdrop-filter: blur(5px); /* Apply a blur effect to the background */
+border-radius: 10px; /* Rounded corners for the navbar */
+
+box-shadow:  0 0 8px 1px #0003; /* Slight shadow for depth */
+    align-items: center;
+    padding: 5px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar .logo img {
+    width: 250px;
+    justify-content: left;
+  }
+
+  .navbar .menu {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    list-style: none;
+  }
+
+  .navbar .menu li {
+    margin: 0 15px;
+    position: relative;
+  }
+
+.navbar .menu li a {
+text-decoration: none;
+color: #000;
+font-weight: 500;
+font-size: 20px;
+font-family:Gabarito; /* Added font family */
+display: flex;
+align-items: center;
+gap: 5px;
+transition: color 0.3s ease;
+}
+
+
+  .navbar .menu li a:hover {
+    color: #d51f3f;
+  }
+
+  /* Arrow Icon */
+  .navbar .menu li a .arrow {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(-135deg); /* Default: pointing up */
+    transition: transform 0.3s ease;
+  }
+
+  .navbar .menu li:hover .arrow {
+    transform: rotate(45deg); /* On hover: pointing down */
+  }
+
+  .navbar .menu li:hover .dropdown {
+    display: flex;
+  }
+
+  .contact-button {
+    margin-left: auto;
+    background-color: #000;
+    color: #fff;
+    font-family: Gabarito;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  .no{
+      display:block;
+  }
+
+  .contact-button:hover {
+    background-color: #d51f3f;
+    color: white;
+  }
+
+  /* Dropdown Menu Styling */
+  .dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+    background: #fff;
+    color: #35323282;
+    border-radius: 8px;
+    padding: 20px 25px 40px 25px;
+    width: 600px;
+    box-shadow: 0 4px 10px rgba(31, 24, 24, 0.2);
+    z-index: 100;
+  }
+
+  .dropdown .submenu {
+    display: grid;
+    grid-template-columns: repeat(2, 0.65fr);}
+
+  .dropdown .submenu div {
+    color: #333;
+  }
+
+  .dropdown .submenu div h4 {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 20px 15px;
+    color: #aaa;
+  }
+
+  .dropdown .submenu div ul {
+    list-style: none;
+  }
+
+  .dropdown .submenu div ul li {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .dropdown .submenu div ul li a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .dropdown .submenu div ul li a:hover {
+    color: #d51f3f;
+  }
+
+  .dropdown .image-container {
+    grid-column: span 3;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .dropdown .image-container img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+</style>
+
+<nav class="navbar">
+  <div class="logo">
+    <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/IF_Logo.png" alt="Indiafinds Logo">
+  </div>
+  <ul class="menu">
+    <li><a href="#">About</a></li>
+    <li>
+      <a href="#">Services <span class="arrow"></span></a>
+      <div class="dropdown">
+        <div class="submenu">
+          <div>
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">Website Designing</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Branding</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="https://picsum.photos/300/200" alt="Charging Solution">
+        </div>
+      </div>
+    </li>
+    <li><a href="#">Join Us</a></li>
+    <li><a href="#">Portfolio</a></li>
+  </ul>
+  <li class="no"><a href="#" class="contact-button">Contact</a></li>
+</nav>
+<script>
+  const navbar = document.querySelector('.navbar');
+  const body = document.querySelector('body');
+
+  navbar.addEventListener('mouseenter', () => {
+    body.classList.add('blurred');
+  });
+
+  navbar.addEventListener('mouseleave', () => {
+    body.classList.remove('blurred');
+  });
+</script>
