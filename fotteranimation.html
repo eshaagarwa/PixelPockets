@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap">
+<style>
+/* General Reset */
+
+/* Container for the design */
+.container {
+text-align: center;
+position: relative;
+max-width: 100vw;
+background-color: #141615;
+overflow: hidden;
+    display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh;
+}
+
+/* Main Text */
+.main-text {
+font-family: Gabarito;
+font-size: 250px;
+color: #fff; /* Pale Yellow */
+text-transform: lowercase;
+font-weight: 00;
+
+}
+.indiafinds{
+    letter-spacing: -13px;
+}
+/* Word Cloud */
+.word-cloud {
+display: flex;
+flex-wrap: wrap;
+justify-content:center;
+gap: 10px;
+margin-top: 150px;
+}
+
+.trade{
+font-size: 50px;
+position: absolute;
+top: 130px;
+}
+.word {
+font-size: 20px;
+padding: 5px 10px;
+transform: rotate(-10deg);
+text-transform: uppercase;
+font-weight: bold;
+transition: all 0.3s ease-in-out;
+}
+
+.word:hover {
+transform: rotate(0deg) scale(1.1);
+}
+
+/* Word Background Colors */
+.word.black {
+background-color: #000;
+color: #fff;
+}
+
+.word.cream {
+background-color: #Fff;
+color: #000;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="main-text">
+        <span class="indiafinds">Gravity</span><span class="trade">&trade;
+                </span>
+    <div class="word-cloud">
+        <span class="word black">About us</span>
+        <span class="word cream">privacy policy</span>
+        <span class="word black">terms & conditions</span>
+        <span class="word cream">Contact us</span>
+</div>
+<script>
+    // Add your JavaScript below
+</script>
+</body>
+</html>
