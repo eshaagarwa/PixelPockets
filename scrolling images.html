@@ -1,0 +1,82 @@
+<div class="image-slider">
+    <div class="slider-wrapper">
+      <div class="slider-track">
+        <!-- Add your images here -->
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo1.png" alt="Image 1">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo2.png" alt="Image 2">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo3.png" alt="Image 3">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo4.png" alt="Image 4">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo5.png" alt="Image 5">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo6.png" alt="Image 6">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo7.png" alt="Image 7">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo8.png" alt="Image 8">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo9.png" alt="Image 9">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo10.png" alt="Image 10">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo11.png" alt="Image 11">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo12.png" alt="Image 12">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo13.png" alt="Image 13">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo14.png" alt="Image 14">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo15.png" alt="Image 15">
+        <!-- Duplicate images to create seamless infinite loop -->
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo1.png" alt="Image 1">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo2.png" alt="Image 2">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo3.png" alt="Image 3">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo4.png" alt="Image 4">
+        <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/client-logo5.png" alt="Image 5">
+      </div>
+    </div>
+  </div>
+  
+  <style>
+     .image-slider {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .slider-wrapper {
+    display: flex;
+  }
+  
+  .slider-track {
+    display: flex;
+    animation: slide-infinite 30s linear infinite;
+  }
+  
+  .slider-track img {
+    width: 150px; /* Adjust image size as per your design */
+    margin-right: 10px; /* Adjust spacing between images */
+  }
+  
+  @keyframes slide-infinite {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  </style>
+  <script>
+     // Ensure that the slider dynamically adjusts based on screen size
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.slider-track');
+    const images = document.querySelectorAll('.slider-track img');
+    
+    let trackWidth = 0;
+    images.forEach(img => {
+      trackWidth += img.offsetWidth + 10; // Add image width and margin
+    });
+    
+    // Duplicate images if necessary to cover the full slider width
+    while (trackWidth < window.innerWidth * 2) {
+      images.forEach(img => {
+        const clone = img.cloneNode(true);
+        track.appendChild(clone);
+        trackWidth += img.offsetWidth + 10;
+      });
+    }
+  });
+  
+  
+  </script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient and Marquee</title>
+    <style>
+        /* Gradient Section */
+        .grad {
+            background: #d51f3f;
+            background: -webkit-linear-gradient(0deg, #d51f3f 0%, #FFF 100%);
+            background: linear-gradient(0deg, #d51f3f 0%, #FFF 100%);
+            height: 30vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; /* Text color for visibility */
+            font-family: 'Helvetica', sans-serif;
+            font-size: 2em;
+            text-transform: uppercase;
+        }
+
+        /* Marquee Section */
+        .marquee-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 100px; /* Adjust the height for better visibility */
+            background-color: #d51f3f; /* Matches gradient for seamless design */
+        }
+
+        .marquee-content {
+            display: flex;
+            align-items: center;
+            gap: 50px; /* Space between items */
+            white-space: nowrap;
+            animation: scroll 15s linear infinite;
+        }
+
+        .marquee-item {
+            font-family: 'Helvetica', sans-serif;
+            font-size: 3em; /* Large, bold text */
+            font-weight: bold;
+            color: #fff; /* White text for contrast */
+            text-transform: uppercase;
+            display: inline-block;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle block effect */
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Gradient Section -->
+    <div class="grad">
+        Welcome to Our Platform!
+    </div>
+
+    <!-- Marquee Section -->
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+            <span class="marquee-item">New Season, New Skills!</span>
+            <span class="marquee-item">All Courses at $9.99</span>
+            <span class="marquee-item">Enroll Now!</span>
+            <span class="marquee-item">Learn and Grow!</span>
+            <!-- Duplicate for endless scrolling -->
+            <span class="marquee-item">New Season, New Skills!</span>
+            <span class="marquee-item">All Courses at $9.99</span>
+            <span class="marquee-item">Enroll Now!</span>
+            <span class="marquee-item">Learn and Grow!</span>
+        </div>
+    </div>
+</body>
+</html>
