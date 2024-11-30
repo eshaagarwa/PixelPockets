@@ -1,0 +1,145 @@
+<section class="custom-trending-now">
+  <!-- Left Section (Titles) -->
+  <div class="custom-left-section">
+    <div class="custom-trending-item" data-index="0">
+      <span class="custom-category">Blogs</span>
+      <h2 class="custom-titlesar">The Future Trajectory of Marketing to Drive Positive Brand Growth</h2>
+    </div>
+    <div class="custom-trending-item" data-index="1">
+      <span class="custom-category">Press Release</span>
+      <h2 class="custom-titlesar">Schbang, India’s Largest Independent Agency, Cements Its Status as a Global Challenger</h2>
+    </div>
+    <div class="custom-trending-item" data-index="2">
+      <span class="custom-category">Press Release</span>
+      <h2 class="custom-titlesar">Dabur Chyawanprash's 'Anti-Medicine Campaign' Returns with a Festive Twist</h2>
+    </div>
+  </div>
+
+  <!-- Right Section (Images) -->
+  <div class="custom-right-section">
+    <div class="custom-image-wrapper" data-index="0">
+      <img src="https://cdn.prod.website-files.com/64117da520cdfb7ab62144a5/66e2c8fb0c4c8f3ef15af191_0bca5cbdd2d39e039e82e5c2fc0e0be46bc96af33656920822f6b46cb782f9cc-p-500.webp" alt="Marketing Image 1" class="custom-trending-image">
+    </div>
+    <div class="custom-image-wrapper" data-index="1">
+      <img src="https://cdn.prod.website-files.com/64117da520cdfb7ab62144a5/66eac0f25970c5729df3ead6_Untitled%20design-p-500.png" alt="Marketing Image 2" class="custom-trending-image">
+    </div>
+    <div class="custom-image-wrapper" data-index="2">
+      <img src="https://cdn.prod.website-files.com/64117da520cdfb7ab62144a5/67441912e113661ceef10d84_Tech%20Thumb_3-p-500.png" alt="Marketing Image 3" class="custom-trending-image">
+    </div>
+  </div>
+</section>
+
+<style>
+  .custom-trending-now {
+    font-family: raleway;
+    display: flex;
+    gap: 20px;
+    padding: 30px 100px;
+  }
+
+  .custom-left-section {
+    width: 60vw;
+  }
+
+  .custom-trending-item {
+    padding-top: 35px;
+    border-bottom: 1px solid black;
+    padding-bottom: 25px;
+    cursor: url('https://img.icons8.com/ios-glyphs/20/full-stop--v2.png'), auto;
+  }
+
+  .custom-category {
+    font-size: 14px !important;
+    color: #000;
+    font-weight: 400;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 3px 12px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .custom-titlesar {
+    font-family: raleway !important;
+    font-size: 17px !important;
+    font-weight: bold !important;
+    text-transform: Capitalize !important;
+    color: black; /* Default color */
+    margin-top: 40px;
+    transition: color 0.3s ease;
+  }
+
+  .custom-right-section {
+    width: 40vw;
+    position: relative; /* Allows images to stack */
+    height: auto;
+  }
+
+  .custom-image-wrapper {
+    position: absolute; /* Stack images on top of each other */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(130px);
+    transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  .custom-trending-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-left: 40px;
+  }
+
+  /* Hover Effect for Titles */
+  .custom-trending-item:hover .custom-titlesar {
+    color: #d51f3f; /* Highlight hovered title */
+  }
+
+  .custom-trending-item:not(:hover) .custom-titlesar {
+    color: grey; /* Dim non-hovered titles */
+  }
+
+  .custom-trending-item:hover .custom-category {
+    color: #d51f3f;
+    border-color: #d51f3f; /* Highlight category on hover */
+  }
+
+  .custom-trending-item:not(:hover) .custom-category {
+    color: grey; /* Dim non-hovered categories */
+    border-color: grey; /* Dim border color */
+  }
+
+  /* Animation: Slide-in-Up Effect */
+  .custom-image-wrapper.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Get all trending items and images
+  const trendingItems = document.querySelectorAll('.custom-trending-item');
+  const imageWrappers = document.querySelectorAll('.custom-image-wrapper');
+
+  trendingItems.forEach((item, index) => {
+    item.addEventListener('mouseenter', () => {
+      // Remove active class from all images
+      imageWrappers.forEach(image => image.classList.remove('active'));
+
+      // Show the corresponding image with slide-in effect
+      const imageToShow = document.querySelector(`.custom-image-wrapper[data-index="${index}"]`);
+      if (imageToShow) {
+        imageToShow.classList.add('active');
+      }
+    });
+
+    item.addEventListener('mouseleave', () => {
+      // Remove active class from all images
+      imageWrappers.forEach(image => image.classList.remove('active'));
+    });
+  });
+</script>

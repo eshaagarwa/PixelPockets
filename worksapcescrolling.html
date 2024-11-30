@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Images with Smooth Infinite Loop</title>
+    <style>
+        .rose-container {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px; /* Gap between two lines */
+            overflow: hidden;
+            background-color: #FFF;
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+        }
+
+
+        .lily-banner {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Space between images */
+            white-space: nowrap;
+            animation: scroll 120s linear infinite; /* Slower scrolling speed */
+            position: relative;
+            width: fit-content; /* Automatically adjust width based on content */
+            flex-wrap: nowrap;  /* Prevent wrapping of content */
+        }
+
+        .lily-banner img {
+            width: 500px; /* Adjust image width for a rectangular shape */
+            height: 300px; /* Adjust image height */
+            object-fit: cover;
+            border-radius: 10px; /* Rounded corners */
+            transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover effects */
+            position: relative;
+        }
+
+        /* Hover Effect: Show text overlay */
+        .orchid-image-container {
+            position: relative;
+            min-width: 500px; /* Ensure it doesn't shrink below this width */
+        }
+
+        .orchid-image-container:hover img {
+            opacity: 0.4; /* Dim the image on hover */
+        }
+
+        /* Text Overlay */
+        .orchid-image-container .tulip-text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease; /* Smooth fade-in effect */
+        }
+
+        .orchid-image-container:hover .tulip-text-overlay {
+            opacity: 1; /* Show text on hover */
+        }
+
+        /* First line scrolling left to right */
+        .jasmine-line-1 {
+            animation-direction: normal;
+        }
+
+        /* Second line scrolling right to left */
+        .jasmine-line-2 {
+            animation-direction: reverse;
+            animation: scroll 120s linear infinite reverse;
+            animation-delay: -60s;
+        }
+
+        /* Keyframes for Scrolling */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0); /* Start from the beginning */
+            }
+            100% {
+                transform: translateX(-100%); /* End after the full width of all images */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rose-container">
+        <!-- Line 1 -->
+        <div class="lily-banner jasmine-line-1">
+            <!-- Duplicate the images to create a continuous scroll effect -->
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-19-1-1.png" alt="Image 1">
+                <div class="tulip-text-overlay">Text 1</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-19-2.png" alt="Image 2">
+                <div class="tulip-text-overlay">Text 2</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-13-2.png" alt="Image 3">
+                <div class="tulip-text-overlay">Text 3</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-13-1-1.png" alt="Image 4">
+                <div class="tulip-text-overlay">Text 4</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-19-1.png" alt="Image 5">
+                <div class="tulip-text-overlay">Text 5</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-9.png" alt="Image 6">
+                <div class="tulip-text-overlay">Text 6</div>
+            </div>
+
+            <!-- Duplicated images for continuous effect -->
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-19-1-1.png" alt="Image 1">
+                <div class="tulip-text-overlay">Text 1</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-19-2.png" alt="Image 2">
+                <div class="tulip-text-overlay">Text 2</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-13-2.png" alt="Image 3">
+                <div class="tulip-text-overlay">Text 3</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-13-1-1.png" alt="Image 4">
+                <div class="tulip-text-overlay">Text 4</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-19-1.png" alt="Image 5">
+                <div class="tulip-text-overlay">Text 5</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-9.png" alt="Image 6">
+                <div class="tulip-text-overlay">Text 6</div>
+            </div>
+        </div>
+
+        <!-- Line 2 -->
+        <div class="lily-banner jasmine-line-2">
+            <!-- Duplicate the images to create a continuous scroll effect -->
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-2.png" alt="Image 7">
+                <div class="tulip-text-overlay">Text 7</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-19.png" alt="Image 8">
+                <div class="tulip-text-overlay">Text 8</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-13.png" alt="Image 9">
+                <div class="tulip-text-overlay">Text 9</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-15.png" alt="Image 10">
+                <div class="tulip-text-overlay">Text 10</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-17.png" alt="Image 11">
+                <div class="tulip-text-overlay">Text 11</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-18.png" alt="Image 12">
+                <div class="tulip-text-overlay">Text 12</div>
+            </div>
+
+            <!-- Duplicated images for continuous effect -->
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-2.png" alt="Image 7">
+                <div class="tulip-text-overlay">Text 7</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-19.png" alt="Image 8">
+                <div class="tulip-text-overlay">Text 8</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-13.png" alt="Image 9">
+                <div class="tulip-text-overlay">Text 9</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-15.png" alt="Image 10">
+                <div class="tulip-text-overlay">Text 10</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-17.png" alt="Image 11">
+                <div class="tulip-text-overlay">Text 11</div>
+            </div>
+            <div class="orchid-image-container">
+                <img src="http://newindiafinds.indiafinds.in/wp-content/uploads/2024/11/page-18.png" alt="Image 12">
+                <div class="tulip-text-overlay">Text 12</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
